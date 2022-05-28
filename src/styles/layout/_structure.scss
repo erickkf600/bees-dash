@@ -39,7 +39,7 @@ input {
     }
 }
 .input-error-msg {
-    font-size: $text12px;
+    font-size: $px12;
     color: $red;
 }
 //CONTAINER
@@ -82,6 +82,7 @@ p {
     margin: 0;
     padding: 0;
     background: transparent;
+    color: #000;
 }
 
 .btn-loader {

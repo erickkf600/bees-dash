@@ -1,0 +1,71 @@
+@import './../../styles/utils/mixins';
+@import './../../styles/utils/variables';
+
+.login-page{
+    min-height: 100vh;
+    width: 100%;
+    background: $primary;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__bee{
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        width: 150px;
+        height: 150px;
+        margin: auto;
+        @include respond-to('medium'){
+            width: 278px;
+            height: 278px;
+            bottom: 0;
+            left: 0;
+            right: auto;
+            top: auto;
+            margin: 0;
+        }
+    }
+
+    &__form{
+        &-texts{
+            p{
+                font-size: $px14;
+                margin-bottom: 16px;
+            }
+        }
+
+        &-control{
+
+            &--checkbox{
+                margin-top: 16px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                label, input{
+                    cursor: pointer;
+                    margin-left: 4px;
+                    font-size: $px14;
+                    user-select: none;
+                }
+            }
+        }
+
+        &-button{
+            background: $iris;
+            padding: 8px 16px;
+            border-radius: 4px;
+            width: 75px;
+            height: 40px;
+            color: $white;
+            @include transition(0.3s);
+            display: block;
+            margin: 22px auto;
+            &:hover{
+                background: darken($iris, 5%)
+            }
+        }
+    }
+}
