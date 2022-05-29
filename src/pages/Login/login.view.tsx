@@ -8,9 +8,11 @@ const LoginView: any = ({ saveUser }: any) => {
     const {
         register,
         handleSubmit,
-        formState: { errors },
+        formState: { isValid, isDirty },
     } = useForm<IFormInputs>({
         resolver: yupResolver(schema),
+        shouldUnregister: true,
+        mode: "onChange",
     });
     return (
         <section className="login-page">
@@ -33,9 +35,6 @@ const LoginView: any = ({ saveUser }: any) => {
                         placeholder="Full name"
                         {...register("full_name")}
                     />
-                    <b className="input-error-msg">
-                        {errors.full_name?.message}
-                    </b>
                 </div>
 
                 <div className="login-page__form-control login-page__form-control--checkbox">
@@ -52,8 +51,11 @@ const LoginView: any = ({ saveUser }: any) => {
 
                 <button
                     className="login-page__form-button"
-                    type="submit"
+                    disabled={!isValid || !isDirty}
+                    data-testid="send"
+                    type="button"
                     role="button"
+                    onClick={handleSubmit(saveUser)}
                 >
                     Enter
                 </button>

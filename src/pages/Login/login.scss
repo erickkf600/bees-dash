@@ -66,6 +66,9 @@
             &:hover{
                 background: darken($iris, 5%)
             }
+            &:disabled{
+                background: $dark-medium;
+            }
         }
     }
 }

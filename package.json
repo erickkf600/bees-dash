@@ -15,7 +15,7 @@
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-hook-form": "^7.31.3",
-    "react-router-dom": "^5.3.3",
+    "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "sass": "^1.52.1",
     "styled-components": "^5.3.5",
@@ -26,7 +26,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --detectOpenHandles --no-cache",
+    "test:coverage": "react-scripts test --detectOpenHandles  --coverage --no-cache",
     "eject": "react-scripts eject",
     "lint": "eslint src/**",
     "lint:fix": "eslint --fix src/**"
@@ -63,5 +64,20 @@
     "eslint-plugin-react-hooks": "^4.5.0",
     "husky": "^8.0.1",
     "prettier": "^2.6.2"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!<rootDir>/src/registerServiceWorker.js",
+      "!<rootDir>/src/serviceWorker.js",
+      "!<rootDir>/node_modules/",
+      "!<rootDir>/src/routing/**",
+      "!<rootDir>/src/index.tsx",
+      "!<rootDir>/src/**/*.axios.tsx",
+      "!<rootDir>/src/**/*.interface.tsx",
+      "!<rootDir>/src/**/*.style.tsx",
+      "!<rootDir>/src/**/*.provider.tsx",
+      "!<rootDir>/src/services/http/**"
+    ]
   }
 }

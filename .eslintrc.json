@@ -12,11 +12,13 @@
         "ecmaVersion": 12,
         "sourceType": "module"
     },
-    "plugins": ["react", "@typescript-eslint", "prettier"],
+    "plugins": ["react", "@typescript-eslint", "prettier", "react-hooks"],
     "rules": {
         "no-unused-vars": "warn",
         "prettier/prettier": "error",
         "react/display-name": "off",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
         "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }],
         "@typescript-eslint/naming-convention": [
             "error",
