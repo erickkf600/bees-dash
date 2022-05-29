@@ -17,10 +17,11 @@ export const schema = yup.object().shape({
         .oneOf([true], "É nesecessário declarar ser maior de 18"),
 });
 const Login = (props: any) => {
-    const { setData } = useSaveData();
+    const { setData, setAuth } = useSaveData();
     const saveUser = (data: IFormInputs) => {
         try {
             setData({ full_name: data.full_name });
+            setAuth(true);
             localStorage.setItem(
                 LocalStorage.NAME,
                 JSON.stringify({ full_name: data.full_name })

@@ -1,0 +1,38 @@
+@import './../../styles/utils/mixins';
+@import './../../styles/utils/variables';
+
+.header{
+    display: flex;
+    align-items:  center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 72px;
+    padding: 0 20px;
+    background: $primary;
+
+    @include respond-to('medium'){
+        padding: 0 40px 0 20px;
+    }
+
+    &__name, &__back{
+        color: #000;
+        font: {
+            size: $px20;
+            weight: 400;
+        }
+        @include respond-to('medium'){
+            font-size: $px30;
+        }
+    }
+
+    &__back{
+        background: url('./../../assets/img/arrow.svg') no-repeat left;
+        background-size: 21%;
+        padding-left: 39px;
+        height: 100%;
+        @include respond-to('medium'){
+            padding-left: 58px;
+            background-size: 24%;
+        }
+    }
+}
