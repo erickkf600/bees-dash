@@ -26,8 +26,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --detectOpenHandles --no-cache",
-    "test:coverage": "react-scripts test --detectOpenHandles  --coverage --no-cache",
+    "test": "react-scripts test --detectOpenHandles --no-cache --coverage",
     "eject": "react-scripts eject",
     "lint": "eslint src/**",
     "lint:fix": "eslint --fix src/**"

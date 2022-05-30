@@ -4,6 +4,7 @@ html {
     padding: 0;
     box-sizing: border-box;
     font-family: $work;
+    background: $secondary;
 }
 h1,
 h2,
@@ -49,6 +50,7 @@ input {
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+    box-sizing: border-box;
     @include respond-to('device') {
         max-width: 540px;
     }

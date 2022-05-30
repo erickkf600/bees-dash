@@ -1,5 +1,5 @@
-@import './../../styles/utils/mixins';
-@import './../../styles/utils/variables';
+@import './../../../styles/utils/mixins';
+@import './../../../styles/utils/variables';
 
 .header{
     display: flex;
@@ -17,7 +17,7 @@
     &__name, &__back{
         color: #000;
         font: {
-            size: $px20;
+            size: $px18;
             weight: 400;
         }
         @include respond-to('medium'){
@@ -26,7 +26,7 @@
     }
 
     &__back{
-        background: url('./../../assets/img/arrow.svg') no-repeat left;
+        background: url('./../../../assets/img/arrow.svg') no-repeat left;
         background-size: 21%;
         padding-left: 39px;
         height: 100%;

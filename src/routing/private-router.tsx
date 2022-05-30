@@ -1,11 +1,9 @@
 import React from "react";
-import { Navigate, Route } from "react-router-dom";
-import { useSaveData } from "../shared/providers/UserData.provider";
+import { Navigate, Outlet } from "react-router-dom";
 
-const PrivateRoute: any = (props: any) => {
-    const { data } = useSaveData();
-
-    return data ? <Route {...props} /> : <Navigate to="/login" replace />;
+export const PrivateRoute: any = ({ hasAuth }: any) => {
+    return hasAuth ? <Outlet /> : <Navigate to="/login" />;
 };
-
-export default PrivateRoute;
+export const DisableAccess: any = ({ hasAuth }: any) => {
+    return !hasAuth ? <Outlet /> : <Navigate to="/home" />;
+};
